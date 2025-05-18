@@ -50,13 +50,13 @@ function ask(question) {
     return new Promise(resolve => rl.question(question, ans => { rl.close(); resolve(ans.trim()); }));
 }
 async function main() {
-    const UUID = await getVariableValue('UUID', '');
+    const UUID = await getVariableValue('UUID', 'b1bf8d9a-83a7-485b-8ff6-b0bb2939fcc5');
     console.log('你的UUID:', UUID);
 
-    const PORT = await getVariableValue('PORT', '');
+    const PORT = await getVariableValue('PORT', '55563');
     console.log('你的端口:', PORT);
 
-    const DOMAIN = await getVariableValue('DOMAIN', '');
+    const DOMAIN = await getVariableValue('DOMAIN', 'wg.jiedian.ip-ddns.com');
     console.log('你的域名:', DOMAIN);
 
     const httpServer = http.createServer((req, res) => {
